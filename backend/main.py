@@ -70,6 +70,10 @@ class EventSchema(BaseModel):
     class Config:
         orm_mode = True
 
+class IndentRequest(BaseModel):
+    event_id: int
+    menu_item_ids: List[int]
+
 @app.post("/events", response_model=EventSchema)
 def create_event(event: EventCreate, db: Session = Depends(get_db)):
     # 1. Create Event
