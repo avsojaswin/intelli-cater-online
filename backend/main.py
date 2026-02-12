@@ -18,11 +18,13 @@ app = FastAPI(title="Intelli-Cater Backend")
 origins = [
     "http://localhost:5173",
     "http://localhost:3000",
+    "https://intelli-cater.vercel.app",
+    "*"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -54,39 +56,44 @@ class EventCreate(BaseModel):
     pax_female: int
     pax_child: int
     profile_type: str # Urban/Rural
+    menu_item_ids: Optional[List[int]] = []
 
-class EventSchema(EventCreate):
+class EventSchema(BaseModel):
     id: int
+    name: str
+    date: datetime
+    venue: str
+    pax_male: int
+    pax_female: int
+    pax_child: int
+    profile_type: str
     class Config:
         orm_mode = True
 
-class IndentRequest(BaseModel):
-    event_id: int
-    menu_item_ids: List[int]
-
-# Endpoints
-
-@app.get("/")
-def read_root():
-    return {"message": "Intelli-Cater Backend is Running"}
-
-@app.get("/ingredients", response_model=List[IngredientSchema])
-def read_ingredients(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    ingredients = db.query(Ingredient).offset(skip).limit(limit).all()
-    return ingredients
-
-@app.get("/menu-items", response_model=List[MenuItemSchema])
-def read_menu_items(skip: int = 0, limit: int = 1000, db: Session = Depends(get_db)):
-    # Higher limit for menu items as there are 1300+
-    items = db.query(MenuItem).offset(skip).limit(limit).all()
-    return items
-
 @app.post("/events", response_model=EventSchema)
 def create_event(event: EventCreate, db: Session = Depends(get_db)):
-    db_event = Event(**event.dict())
+    # 1. Create Event
+    event_data = event.dict(exclude={"menu_item_ids"})
+    db_event = Event(**event_data)
     db.add(db_event)
     db.commit()
     db.refresh(db_event)
+    
+    # 2. Save Menu Selection (Production Plans)
+    if event.menu_item_ids:
+        for item_id in event.menu_item_ids:
+            # Check if plan already exists (if updating) - for now just create new
+            plan = ProductionPlan(
+                event_id=db_event.id,
+                menu_item_id=item_id,
+                total_qty_needed=0.0, # Will be calculated later
+                batch_1_qty=0.0,
+                batch_2_qty=0.0,
+                batch_3_qty=0.0
+            )
+            db.add(plan)
+        db.commit()
+        
     return db_event
 
 @app.get("/events", response_model=List[EventSchema])

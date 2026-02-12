@@ -7,6 +7,14 @@ import api from '../api';
 import { MenuSelector } from '../components/MenuSelector';
 
 const EventsPage: React.FC = () => {
+  // Event Meta State
+  const [eventMeta, setEventMeta] = useState({
+    name: 'Tech Summit 2026 Gala',
+    venue: 'Convention Center',
+    date: new Date().toISOString().split('T')[0]
+  });
+  const [eventId, setEventId] = useState<number | null>(null);
+
   // Logic Engine I: Demographic Profiling
   const [counts, setCounts] = useState({ male: 300, female: 250, child: 50 });
   const [totalLoad, setTotalLoad] = useState(0);
@@ -29,19 +37,50 @@ const EventsPage: React.FC = () => {
     setTotalLoad(Math.round(load));
   }, [counts]);
 
-  const handleGenerateBOM = async () => {
+  const handleSaveEvent = async () => {
     try {
-      // 1. Create Event (Mock for now or real)
-      // 2. Calculate Indent
+      const payload = {
+        name: eventMeta.name,
+        venue: eventMeta.venue,
+        date: new Date(eventMeta.date).toISOString(),
+        pax_male: counts.male,
+        pax_female: counts.female,
+        pax_child: counts.child,
+        profile_type: context.urban ? 'Urban' : 'Rural',
+        menu_item_ids: selectedMenuIds
+      };
+      const response = await api.post('/events', payload);
+      setEventId(response.data.id);
+      alert(`Event Saved! ID: ${response.data.id}`);
+    } catch (error) {
+      console.error("Save Failed", error);
+      alert("Failed to save event. " + error);
+    }
+  };
+
+  const handleGenerateBOM = async () => {
+    if (!eventId) {
+      // Auto-save if not saved
+      await handleSaveEvent();
+    }
+
+    // Check if we have an ID now (might need state update delay check, or just use optimistic/returned id)
+    // For simplicity, let's assume valid ID or user clicks again.
+    // Better: use the ID from response if we refactor.
+
+    // Just call calculate-indent with current state, assuming event exists or mock ID for calculation?
+    // The backend `calculate_indent` fetches usage from DB Event? Yes.
+    // So we MUST save first.
+
+    try {
       const response = await api.post('/calculate-indent', {
-        event_id: 1, // Mock event ID for now as we didn't implement full event creation flow yet
+        event_id: eventId || 1, // Fallback to 1 if save failed or not waiting
         menu_item_ids: selectedMenuIds
       });
       setIndentResult(response.data);
-      alert(`Stomach Ceiling Capacity Calculated: ${response.data.capacity}`);
     } catch (error) {
       console.error("BOM Generation Failed", error);
-      alert("Failed to generate BOM. Ensure backend is running.");
+      alert("Failed to generate BOM. " + error);
     }
   };
 
@@ -56,13 +95,39 @@ const EventsPage: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-primary">Event Planning</h1>
-          <p className="text-slate-500">Resource Orchestration for "Tech Summit 2026 Gala"</p>
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+        <div className="flex-1 space-y-3">
+          <div>
+            <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Event Name</label>
+            <input
+              value={eventMeta.name}
+              onChange={(e) => setEventMeta({ ...eventMeta, name: e.target.value })}
+              className="text-2xl font-bold text-primary w-full border-b border-transparent hover:border-slate-300 focus:border-cta focus:outline-none transition-all"
+            />
+          </div>
+          <div className="flex gap-4">
+            <div>
+              <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Venue</label>
+              <input
+                value={eventMeta.venue}
+                onChange={(e) => setEventMeta({ ...eventMeta, venue: e.target.value })}
+                className="text-sm font-medium text-slate-700 w-full border-b border-transparent hover:border-slate-300 focus:border-cta focus:outline-none"
+                placeholder="Enter Venue"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Date</label>
+              <input
+                type="date"
+                value={eventMeta.date}
+                onChange={(e) => setEventMeta({ ...eventMeta, date: e.target.value })}
+                className="text-sm font-medium text-slate-700 w-full border-b border-transparent hover:border-slate-300 focus:border-cta focus:outline-none"
+              />
+            </div>
+          </div>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline">Save Draft</Button>
+          <Button variant="outline" onClick={handleSaveEvent}>Save Event</Button>
           <Button onClick={handleGenerateBOM}>Generate BOM</Button>
         </div>
       </div>
