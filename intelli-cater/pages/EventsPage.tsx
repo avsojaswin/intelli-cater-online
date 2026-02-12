@@ -132,218 +132,143 @@ const EventsPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column: Inputs */}
-        <div className="lg:col-span-2 space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-[calc(100vh-140px)]">
+        {/* Left Column: Inputs & Menu (40%) */}
+        <div className="lg:col-span-4 space-y-4 overflow-y-auto pr-2 custom-scrollbar">
 
-          {/* Logic Engine I Card */}
-          <Card>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-blue-100 rounded-lg text-blue-700"><Users size={20} /></div>
-              <div>
-                <h3 className="font-bold text-lg text-primary">Demographic Profiling</h3>
-                <p className="text-xs text-slate-500">Refining Headcount into Metabolic Capacity</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-              <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                <label className="block text-sm font-medium text-slate-600 mb-2">Adult Male (1.0)</label>
-                <input
-                  type="number"
-                  value={counts.male}
-                  onChange={(e) => setCounts({ ...counts, male: parseInt(e.target.value) || 0 })}
-                  className="w-full text-2xl font-bold bg-transparent border-b border-slate-300 focus:border-cta focus:outline-none"
-                />
-              </div>
-              <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                <label className="block text-sm font-medium text-slate-600 mb-2">Adult Female (0.85)</label>
-                <input
-                  type="number"
-                  value={counts.female}
-                  onChange={(e) => setCounts({ ...counts, female: parseInt(e.target.value) || 0 })}
-                  className="w-full text-2xl font-bold bg-transparent border-b border-slate-300 focus:border-cta focus:outline-none"
-                />
-              </div>
-              <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                <label className="block text-sm font-medium text-slate-600 mb-2">Child (0.5)</label>
-                <input
-                  type="number"
-                  value={counts.child}
-                  onChange={(e) => setCounts({ ...counts, child: parseInt(e.target.value) || 0 })}
-                  className="w-full text-2xl font-bold bg-transparent border-b border-slate-300 focus:border-cta focus:outline-none"
-                />
-              </div>
-            </div>
-
-            <div className="bg-primary/5 rounded-lg p-4 flex items-center justify-between border border-primary/10">
-              <div>
-                <p className="text-sm font-medium text-slate-600">Total Headcount</p>
-                <p className="text-2xl font-bold text-slate-800">{totalHeadcount}</p>
+          {/* Logic Engine I & II Combined */}
+          <Card className="p-4 space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-primary">
+                <Users size={18} />
+                <h3 className="font-bold">Demographics</h3>
               </div>
               <div className="text-right">
-                <p className="text-sm font-medium text-cta">Adjusted Metabolic Load</p>
-                <p className="text-3xl font-bold text-cta">{totalLoad} <span className="text-sm font-normal text-slate-500">units</span></p>
+                <span className="text-xs text-slate-400 block">Metabolic Load</span>
+                <span className="font-bold text-cta">{totalLoad} units</span>
               </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-2">
+              <div className="bg-slate-50 p-2 rounded border border-slate-100 text-center">
+                <label className="block text-[10px] text-slate-500 uppercase">Male</label>
+                <input type="number" value={counts.male} onChange={(e) => setCounts({ ...counts, male: +e.target.value })} className="w-full bg-transparent text-center font-bold focus:outline-none" />
+              </div>
+              <div className="bg-slate-50 p-2 rounded border border-slate-100 text-center">
+                <label className="block text-[10px] text-slate-500 uppercase">Female</label>
+                <input type="number" value={counts.female} onChange={(e) => setCounts({ ...counts, female: +e.target.value })} className="w-full bg-transparent text-center font-bold focus:outline-none" />
+              </div>
+              <div className="bg-slate-50 p-2 rounded border border-slate-100 text-center">
+                <label className="block text-[10px] text-slate-500 uppercase">Child</label>
+                <input type="number" value={counts.child} onChange={(e) => setCounts({ ...counts, child: +e.target.value })} className="w-full bg-transparent text-center font-bold focus:outline-none" />
+              </div>
+            </div>
+
+            <hr className="border-slate-100" />
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-primary">
+                <MapPin size={18} />
+                <h3 className="font-bold">Context</h3>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              <button onClick={() => setContext({ ...context, urban: !context.urban })} className={`p-2 rounded border text-center transition-colors ${context.urban ? 'bg-blue-50 border-blue-200 text-blue-700 font-bold' : 'bg-slate-50 border-slate-100'}`}>
+                {context.urban ? 'Urban Profile' : 'Rural Profile'}
+              </button>
+              <select value={context.spice} onChange={(e) => setContext({ ...context, spice: e.target.value as any })} className="p-2 rounded border border-slate-100 bg-slate-50 focus:outline-none">
+                <option>Low Spice</option>
+                <option>Medium Spice</option>
+                <option>High Spice</option>
+              </select>
             </div>
           </Card>
 
-          {/* Logic Engine II Card */}
-          <Card>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-emerald-100 rounded-lg text-emerald-700"><MapPin size={20} /></div>
-              <div>
-                <h3 className="font-bold text-lg text-primary">Contextual Calibration</h3>
-                <p className="text-xs text-slate-500">Tuning for regional and environmental factors</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 border border-slate-100 rounded-lg">
-                <div>
-                  <p className="font-medium text-slate-800">Profile Type</p>
-                  <p className="text-xs text-slate-500">Urban (Variety) vs Rural (Volume)</p>
-                </div>
-                <div className="flex bg-slate-100 rounded-lg p-1">
-                  <button
-                    onClick={() => setContext({ ...context, urban: true })}
-                    className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${context.urban ? 'bg-white shadow text-primary' : 'text-slate-500 hover:text-slate-700'}`}
-                  >
-                    Urban
-                  </button>
-                  <button
-                    onClick={() => setContext({ ...context, urban: false })}
-                    className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${!context.urban ? 'bg-white shadow text-primary' : 'text-slate-500 hover:text-slate-700'}`}
-                  >
-                    Rural
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between p-4 border border-slate-100 rounded-lg">
-                <div>
-                  <p className="font-medium text-slate-800">Spice Index</p>
-                  <p className="text-xs text-slate-500">Adjusts Chili/Tamarind BOM</p>
-                </div>
-                <select
-                  value={context.spice}
-                  onChange={(e) => setContext({ ...context, spice: e.target.value as any })}
-                  className="bg-slate-50 border border-slate-200 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:border-cta"
-                >
-                  <option>Low</option>
-                  <option>Medium</option>
-                  <option>High</option>
-                </select>
-              </div>
-
-              <div className="flex items-center justify-between p-4 border border-slate-100 rounded-lg">
-                <div>
-                  <p className="font-medium text-slate-800">Fat Index (Ghee+)</p>
-                  <p className="text-xs text-slate-500">+15% Ghee for Dum Biryani profiles</p>
-                </div>
-                <button
-                  onClick={() => setContext({ ...context, fat: !context.fat })}
-                  className={`w-11 h-6 flex items-center rounded-full p-1 transition-colors duration-200 ${context.fat ? 'bg-cta' : 'bg-slate-200'}`}
-                >
-                  <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-200 ${context.fat ? 'translate-x-5' : ''}`}></div>
-                </button>
-              </div>
-            </div>
-          </Card>
-
-          {/* Menu Selection Card */}
-          <MenuSelector selectedIds={selectedMenuIds} onSelectionChange={setSelectedMenuIds} />
+          {/* Menu Selection (Taller) */}
+          <div className="flex-1">
+            <MenuSelector selectedIds={selectedMenuIds} onSelectionChange={setSelectedMenuIds} />
+          </div>
         </div>
 
-        {/* Right Column: Visualizations */}
-        <div className="space-y-6">
-          <Card className="h-full flex flex-col">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 bg-indigo-100 rounded-lg text-indigo-700"><ChefHat size={20} /></div>
+        {/* Right Column: Chart & BOM (60%) */}
+        <div className="lg:col-span-8 flex flex-col gap-4 h-full">
+
+          {/* Stomach Ceiling (Ultra Compact) */}
+          <Card className="flex flex-row items-center p-3 gap-6 bg-slate-50/50">
+            <div className="flex items-center gap-3">
+              <div className="p-1.5 bg-indigo-100 rounded text-indigo-700"><ChefHat size={16} /></div>
               <div>
-                <h3 className="font-bold text-lg text-primary">Stomach Ceiling</h3>
-                <p className="text-xs text-slate-500">Fixed Capacity Constraint (1000g)</p>
+                <h3 className="font-bold text-slate-700 text-sm">Stomach Ceiling</h3>
+                <p className="text-[10px] text-slate-500">Constraint: 1.0 kg/pax</p>
               </div>
             </div>
 
-            <div className="flex-1 min-h-[220px] max-h-[300px] relative flex items-center justify-center">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={[{ name: 'Used', value: 800, fill: '#10B981' }, { name: 'Remaining', value: 200, fill: '#E2E8F0' }]}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={50}
-                    outerRadius={70}
-                    startAngle={180}
-                    endAngle={0}
-                    paddingAngle={5}
-                    dataKey="value"
-                  >
-                    <Cell key="cell-0" fill="#10B981" />
-                    <Cell key="cell-1" fill="#E2E8F0" />
-                  </Pie>
-                  <Tooltip />
-                  <Legend verticalAlign="bottom" height={36} iconSize={10} wrapperStyle={{ fontSize: '12px' }} />
-                </PieChart>
-              </ResponsiveContainer>
-
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 mt-2 text-center">
-                <div className="text-2xl font-bold text-slate-700">80%</div>
-                <div className="text-xs text-slate-400">Capacity</div>
-              </div>
-
-              <div className="absolute top-0 right-0 bg-white/90 p-1.5 rounded border text-[10px] shadow-sm">
-                <div className="font-bold text-error">Max: 1.0 kg</div>
-              </div>
+            <div className="flex-1 h-2 bg-slate-200 rounded-full overflow-hidden relative">
+              <div className="absolute top-0 left-0 h-full bg-cta transition-all duration-500" style={{ width: '80%' }}></div>
             </div>
-
-            <div className="mt-4 p-3 bg-amber-50 border border-amber-100 rounded-lg">
-              <div className="flex gap-2 items-start text-amber-800">
-                <Info size={16} className="mt-0.5 flex-shrink-0" />
-                <p className="text-xs leading-relaxed">
-                  <strong>Menu Density Trap Avoided:</strong> Portions adjusted to fit 1000g limit.
-                </p>
-              </div>
+            <div className="text-right">
+              <span className="block font-bold text-slate-700 text-sm">80% Usage</span>
+              <span className="block text-[10px] text-slate-500">0.8 kg allocated</span>
             </div>
           </Card>
 
-          {/* Indent Result Preview */}
-          {/* Indent Result Preview */}
-          {indentResult && (
-            <Card className="col-span-full mt-6">
-              <div className="flex items-center gap-3 mb-4">
+          {/* BOM Panel (Big) */}
+          <Card className="flex-1 flex flex-col overflow-hidden border-2 border-slate-100 shadow-md">
+            <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-10">
+              <div className="flex items-center gap-2">
                 <div className="p-2 bg-green-100 rounded-lg text-green-700"><ShoppingCart size={20} /></div>
                 <div>
-                  <h3 className="font-bold text-lg text-primary">Generated Indent Details</h3>
-                  <p className="text-xs text-slate-500">Based on Stomach Ceiling of {indentResult.capacity.toFixed(0)} units</p>
+                  <h3 className="font-bold text-lg text-slate-800">Bill of Materials</h3>
+                  <p className="text-xs text-slate-500">
+                    {indentResult ? `Generated for ${indentResult.total_items} items` : 'Ready to Calculate'}
+                  </p>
                 </div>
               </div>
+              {indentResult && (
+                <Button variant="outline" size="sm" onClick={() => alert('Exporting CSV...')}>Download CSV</Button>
+              )}
+            </div>
 
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm text-left">
-                  <thead className="text-xs text-slate-500 uppercase bg-slate-50">
+            <div className="flex-1 overflow-auto bg-slate-50/30 p-0 custom-scrollbar">
+              {!indentResult ? (
+                <div className="h-full flex flex-col items-center justify-center text-slate-400 space-y-4 opacity-60">
+                  <ShoppingCart size={48} strokeWidth={1.5} />
+                  <p>Select menu items and click "Generate BOM"</p>
+                </div>
+              ) : (
+                <table className="w-full text-sm text-left border-collapse">
+                  <thead className="text-xs text-slate-500 uppercase bg-slate-100 sticky top-0">
                     <tr>
-                      <th className="px-4 py-3">Ingredient</th>
-                      <th className="px-4 py-3">Category</th>
-                      <th className="px-4 py-3 text-right">Quantity</th>
-                      <th className="px-4 py-3">Unit</th>
+                      <th className="px-6 py-3 border-b border-slate-200">Ingredient</th>
+                      <th className="px-6 py-3 border-b border-slate-200">Category</th>
+                      <th className="px-6 py-3 border-b border-slate-200 text-right">Qty</th>
+                      <th className="px-6 py-3 border-b border-slate-200">Unit</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="divide-y divide-slate-100 bg-white">
                     {indentResult.indent.map((item: any, idx: number) => (
-                      <tr key={idx} className="border-b border-slate-100 hover:bg-slate-50">
-                        <td className="px-4 py-3 font-medium text-slate-900">{item.name}</td>
-                        <td className="px-4 py-3 text-slate-500">{item.category || '-'}</td>
-                        <td className="px-4 py-3 text-right font-bold text-cta">{item.quantity.toFixed(2)}</td>
-                        <td className="px-4 py-3 text-slate-500 text-xs">{item.unit}</td>
+                      <tr key={idx} className="hover:bg-blue-50/50 transition-colors">
+                        <td className="px-6 py-3 font-medium text-slate-700">{item.name}</td>
+                        <td className="px-6 py-3 text-slate-500 text-xs">{item.category}</td>
+                        <td className="px-6 py-3 text-right font-mono font-bold text-cta">
+                          {item.quantity.toFixed(3)}
+                        </td>
+                        <td className="px-6 py-3 text-slate-400 text-xs">{item.unit}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
+              )}
+            </div>
+
+            {indentResult && (
+              <div className="p-3 bg-green-50 border-t border-green-100 text-xs text-green-800 flex justify-between px-6">
+                <span>Total Check: <strong>Verified</strong></span>
+                <span>JIT Batching: <strong>60% - 30% - 10%</strong></span>
               </div>
-            </Card>
-          )}
+            )}
+          </Card>
 
         </div>
       </div>

@@ -73,9 +73,12 @@ def ingest_data():
             menu_id = row['Menu Item ID']
             ing_id_raw = row['Ingredient ID']
             
-            # If Ingredient ID is valid and exists in our Ingredients table
-            if pd.notna(ing_id_raw) and str(ing_id_raw).isdigit():
-                ing_id = int(ing_id_raw)
+            if pd.notna(ing_id_raw):
+                try:
+                    ing_id = int(float(ing_id_raw))
+                except ValueError:
+                    continue
+                    
                 # Check if this recipe link already exists (avoid duplicates if re-run)
                 exists = session.query(Recipe).filter_by(menu_item_id=menu_id, ingredient_id=ing_id).first()
                 if not exists:
