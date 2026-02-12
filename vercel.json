@@ -1,26 +1,8 @@
 {
-    "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "backend/main.py",
-            "use": "@vercel/python"
-        },
-        {
-            "src": "intelli-cater/package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "dist"
-            }
-        }
-    ],
-    "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "/backend/main.py"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/intelli-cater/$1"
+            "source": "/api/(.*)",
+            "destination": "/api/index.py"
         }
     ]
 }
