@@ -10,3 +10,4 @@ catering.db
 .idea/
 tmp/
 .gemini/
+.vercel
