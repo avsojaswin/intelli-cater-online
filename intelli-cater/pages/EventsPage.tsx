@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Users, MapPin, ChefHat, Info, ShoppingCart } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine, Label } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine, Label, PieChart, Pie, Cell, Legend } from 'recharts';
 import api from '../api';
 import { MenuSelector } from '../components/MenuSelector';
 
@@ -138,11 +138,11 @@ const EventsPage: React.FC = () => {
 
           {/* Logic Engine I Card */}
           <Card>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-blue-100 rounded-lg text-blue-700"><Users size={20} /></div>
               <div>
-                <h3 className="font-bold text-lg text-primary">Demographic Profiling (Dm)</h3>
-                <p className="text-xs text-slate-500">Logic Engine I: Refining Headcount into Metabolic Capacity</p>
+                <h3 className="font-bold text-lg text-primary">Demographic Profiling</h3>
+                <p className="text-xs text-slate-500">Refining Headcount into Metabolic Capacity</p>
               </div>
             </div>
 
@@ -190,11 +190,11 @@ const EventsPage: React.FC = () => {
 
           {/* Logic Engine II Card */}
           <Card>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-emerald-100 rounded-lg text-emerald-700"><MapPin size={20} /></div>
               <div>
                 <h3 className="font-bold text-lg text-primary">Contextual Calibration</h3>
-                <p className="text-xs text-slate-500">Logic Engine II: Tuning for regional and environmental factors</p>
+                <p className="text-xs text-slate-500">Tuning for regional and environmental factors</p>
               </div>
             </div>
 
@@ -258,7 +258,7 @@ const EventsPage: React.FC = () => {
         {/* Right Column: Visualizations */}
         <div className="space-y-6">
           <Card className="h-full flex flex-col">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-2">
               <div className="p-2 bg-indigo-100 rounded-lg text-indigo-700"><ChefHat size={20} /></div>
               <div>
                 <h3 className="font-bold text-lg text-primary">Stomach Ceiling</h3>
@@ -266,31 +266,43 @@ const EventsPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex-1 min-h-[300px] relative">
+            <div className="flex-1 min-h-[220px] max-h-[300px] relative flex items-center justify-center">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chartData} layout="vertical" margin={{ top: 20, right: 30, left: 40, bottom: 5 }}>
-                  <XAxis type="number" domain={[0, 1000]} hide />
-                  <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} />
-                  <Tooltip cursor={{ fill: 'transparent' }} />
-                  <ReferenceLine x={1000} stroke="red" strokeDasharray="3 3">
-                    <Label value="Max Capacity" position="top" fill="red" fontSize={10} />
-                  </ReferenceLine>
-                  <Bar dataKey="weight" stackId="a" radius={[0, 4, 4, 0]} barSize={40} />
-                </BarChart>
+                <PieChart>
+                  <Pie
+                    data={[{ name: 'Used', value: 800, fill: '#10B981' }, { name: 'Remaining', value: 200, fill: '#E2E8F0' }]}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={50}
+                    outerRadius={70}
+                    startAngle={180}
+                    endAngle={0}
+                    paddingAngle={5}
+                    dataKey="value"
+                  >
+                    <Cell key="cell-0" fill="#10B981" />
+                    <Cell key="cell-1" fill="#E2E8F0" />
+                  </Pie>
+                  <Tooltip />
+                  <Legend verticalAlign="bottom" height={36} iconSize={10} wrapperStyle={{ fontSize: '12px' }} />
+                </PieChart>
               </ResponsiveContainer>
 
-              <div className="absolute top-4 right-4 bg-white/90 p-2 rounded border text-xs shadow-sm">
-                <div className="font-bold text-error">Ceiling: 1.0 kg</div>
-                <div className="text-slate-500">Current: 0.8 kg</div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 mt-2 text-center">
+                <div className="text-2xl font-bold text-slate-700">80%</div>
+                <div className="text-xs text-slate-400">Capacity</div>
+              </div>
+
+              <div className="absolute top-0 right-0 bg-white/90 p-1.5 rounded border text-[10px] shadow-sm">
+                <div className="font-bold text-error">Max: 1.0 kg</div>
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-amber-50 border border-amber-100 rounded-lg">
+            <div className="mt-4 p-3 bg-amber-50 border border-amber-100 rounded-lg">
               <div className="flex gap-2 items-start text-amber-800">
                 <Info size={16} className="mt-0.5 flex-shrink-0" />
                 <p className="text-xs leading-relaxed">
-                  <strong>Menu Density Trap Avoided:</strong> Based on current selection,
-                  Intelli-Cater has reduced portion sizes by 12% to fit within the Stomach Ceiling constraint.
+                  <strong>Menu Density Trap Avoided:</strong> Portions adjusted to fit 1000g limit.
                 </p>
               </div>
             </div>

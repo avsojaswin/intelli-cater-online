@@ -44,7 +44,7 @@ const LandingPage: React.FC = () => {
                 <span className="text-accent">Not Trash.</span>
               </h1>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
-                Transform industrial catering from intuitive chaos to data-driven precision. 
+                Transform industrial catering from intuitive chaos to data-driven precision.
                 Eliminate the "Menu Density" trap and achieve zero-waste operations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -69,12 +69,12 @@ const LandingPage: React.FC = () => {
             </div>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-2xl blur-3xl opacity-50 -z-10"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                alt="Industrial Kitchen Dashboard" 
+              <img
+                src="https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                alt="Industrial Kitchen Dashboard"
                 className="rounded-xl shadow-2xl border border-slate-200/50 w-full object-cover h-[400px] lg:h-[500px]"
               />
-              
+
               {/* Floating Stats Card */}
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-xl border border-slate-100 max-w-xs animate-bounce-slow hidden sm:block">
                 <div className="flex items-center justify-between mb-2">
@@ -105,22 +105,22 @@ const LandingPage: React.FC = () => {
               <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 text-blue-600">
                 <Users size={24} />
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">Demographic Profiling (Dm)</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">Demographic Profiling</h3>
               <p className="text-slate-600 leading-relaxed mb-4">
                 Refining headcount into metabolic capacity. Procurement driven by specific composition, not just ticket sales.
               </p>
               <ul className="text-sm text-slate-500 space-y-2">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                  Adult Male (Dm = 1.0)
+                  Adult Male (1.0 units)
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                  Adult Female (Dm = 0.85)
+                  Adult Female (0.85 units)
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                  Child (Dm = 0.5)
+                  Child (0.5 units)
                 </li>
               </ul>
             </Card>
@@ -134,7 +134,7 @@ const LandingPage: React.FC = () => {
                 The axiom: The sum of all BOM items must be ≤ Patron Capacity. As menu variety increases, portion weight decreases.
               </p>
               <div className="p-3 bg-slate-50 rounded border border-slate-100 text-xs font-mono text-slate-600">
-                If Menu Size (Ms) ↑ <br/> THEN Portion Weight (Pw) ↓
+                If Menu Size ↑ <br /> THEN Portion Weight ↓
               </div>
             </Card>
 
@@ -199,42 +199,42 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
             <div className="relative">
-               <Card noPadding className="overflow-hidden">
-                 <div className="bg-primary p-6 text-white">
-                   <h3 className="text-lg font-bold">Case Study: The Hyderabad "Grand Wedding"</h3>
-                 </div>
-                 <div className="p-6 space-y-6">
-                   <div className="flex justify-between items-center pb-4 border-b border-slate-100">
-                     <span className="text-slate-500 font-medium">Traditional Model</span>
-                     <div className="text-right">
-                       <span className="block text-error font-bold">1200 kg</span>
-                       <span className="text-xs text-slate-400">Food Prepared</span>
-                     </div>
-                     <div className="text-right">
-                        <span className="inline-flex items-center px-2 py-1 rounded bg-red-100 text-red-700 text-xs font-bold">
-                          30% Waste
-                        </span>
-                     </div>
-                   </div>
-                   <div className="flex justify-between items-center">
-                     <span className="text-cta font-bold">Intelli-Cater Model</span>
-                     <div className="text-right">
-                       <span className="block text-success font-bold">880 kg</span>
-                       <span className="text-xs text-slate-400">Food Prepared</span>
-                     </div>
-                     <div className="text-right">
-                        <span className="inline-flex items-center px-2 py-1 rounded bg-green-100 text-green-700 text-xs font-bold">
-                          5% Waste
-                        </span>
-                     </div>
-                   </div>
-                   <div className="mt-6 pt-6 border-t border-slate-100 bg-slate-50 -mx-6 -mb-6 p-6 text-center">
-                     <p className="text-sm text-slate-500 uppercase tracking-wide font-semibold">Hard Cash Saved</p>
-                     <p className="text-4xl font-bold text-primary mt-2">₹3.15 Lakhs</p>
-                     <p className="text-xs text-slate-400 mt-1">Single event savings @ ₹250/kg avg cost</p>
-                   </div>
-                 </div>
-               </Card>
+              <Card noPadding className="overflow-hidden">
+                <div className="bg-primary p-6 text-white">
+                  <h3 className="text-lg font-bold">Case Study: The Hyderabad "Grand Wedding"</h3>
+                </div>
+                <div className="p-6 space-y-6">
+                  <div className="flex justify-between items-center pb-4 border-b border-slate-100">
+                    <span className="text-slate-500 font-medium">Traditional Model</span>
+                    <div className="text-right">
+                      <span className="block text-error font-bold">1200 kg</span>
+                      <span className="text-xs text-slate-400">Food Prepared</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="inline-flex items-center px-2 py-1 rounded bg-red-100 text-red-700 text-xs font-bold">
+                        30% Waste
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-cta font-bold">Intelli-Cater Model</span>
+                    <div className="text-right">
+                      <span className="block text-success font-bold">880 kg</span>
+                      <span className="text-xs text-slate-400">Food Prepared</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="inline-flex items-center px-2 py-1 rounded bg-green-100 text-green-700 text-xs font-bold">
+                        5% Waste
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-slate-100 bg-slate-50 -mx-6 -mb-6 p-6 text-center">
+                    <p className="text-sm text-slate-500 uppercase tracking-wide font-semibold">Hard Cash Saved</p>
+                    <p className="text-4xl font-bold text-primary mt-2">₹3.15 Lakhs</p>
+                    <p className="text-xs text-slate-400 mt-1">Single event savings @ ₹250/kg avg cost</p>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </div>
