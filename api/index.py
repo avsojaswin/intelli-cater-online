@@ -12,6 +12,12 @@ import os
 # --- Database Setup ---
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./catering.db")
 
+# Convert postgresql:// to postgresql+pg8000:// for pure-Python driver
+if DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+pg8000://", 1)
+elif DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+pg8000://", 1)
+
 connect_args = {}
 if "sqlite" in DATABASE_URL:
     connect_args["check_same_thread"] = False

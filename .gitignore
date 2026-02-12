@@ -7,3 +7,4 @@ dist
 orgs.txt
 connection_error.txt
 seeds.sql
+.vercel

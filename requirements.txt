@@ -3,6 +3,6 @@ uvicorn
 sqlalchemy
 pandas
 pydantic
-psycopg2-binary
+pg8000
 python-multipart
 requests
