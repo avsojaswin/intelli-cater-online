@@ -32,7 +32,7 @@ def generate_inserts():
         if values_list:
             f.write(f"INSERT INTO ingredients (id, name, category, regional_name, brand, package_size, unit, stock_qty) VALUES\n")
             f.write(",\n".join(values_list))
-            f.write(";\n\n")
+            f.write("\nON CONFLICT (id) DO NOTHING;\n\n")
 
         # 2. Menu Items
         print("Processing Menu Items...")
@@ -49,7 +49,7 @@ def generate_inserts():
         if values_list:
             f.write(f"INSERT INTO menu_items (id, name, category, sub_category, diet_type) VALUES\n")
             f.write(",\n".join(values_list))
-            f.write(";\n\n")
+            f.write("\nON CONFLICT (id) DO NOTHING;\n\n")
 
         # 3. Recipes
         print("Processing Recipes...")
@@ -74,7 +74,7 @@ def generate_inserts():
                 chunk = values_list[i:i + chunk_size]
                 f.write(f"INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES\n")
                 f.write(",\n".join(chunk))
-                f.write(";\n")
+                f.write("\nON CONFLICT DO NOTHING;\n")
 
     print("seeds.sql generated.")
 

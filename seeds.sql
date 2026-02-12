@@ -225,7 +225,8 @@ INSERT INTO ingredients (id, name, category, regional_name, brand, package_size,
 (229, 'Milk Cow', 'Dairy Products', 'Milk Cow', NULL, NULL, 'LTR', 0.0),
 (230, 'Milk Toned', 'Dairy Products', 'Milk Toned', NULL, NULL, 'LTR', 0.0),
 (231, 'Milk Whole', 'Dairy Products', 'Milk Whole', NULL, NULL, 'LTR', 0.0),
-(232, 'Paneer', 'Dairy Products', 'Paneer', 'Milk Mist', NULL, 'KG', 0.0);
+(232, 'Paneer', 'Dairy Products', 'Paneer', 'Milk Mist', NULL, 'KG', 0.0)
+ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO menu_items (id, name, category, sub_category, diet_type) VALUES
 (1, 'Achari Murg Tikka', 'Non-Veg Appetizers', 'Chicken Snacks', 'Non-Veg'),
@@ -1556,7 +1557,8 @@ INSERT INTO menu_items (id, name, category, sub_category, diet_type) VALUES
 (1326, 'Magic Roll', 'Sweets', 'Ultra Sweets', 'Veg'),
 (1327, 'Red Halwa', 'Sweets', 'Ultra Sweets', 'Veg'),
 (1328, 'Shahi Tukara', 'Sweets', 'Ultra Sweets', 'Veg'),
-(1329, 'Tiranga Burfy', 'Sweets', 'Ultra Sweets', 'Veg');
+(1329, 'Tiranga Burfy', 'Sweets', 'Ultra Sweets', 'Veg')
+ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES
 (1, 89, 0.02, 'LTR'),
@@ -2558,7 +2560,8 @@ INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES
 (331, 127, 0.005, 'KG'),
 (331, 89, 0.02, 'LTR'),
 (332, 127, 0.005, 'KG'),
-(332, 89, 0.02, 'LTR');
+(332, 89, 0.02, 'LTR')
+ON CONFLICT DO NOTHING;
 INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES
 (333, 127, 0.005, 'KG'),
 (333, 89, 0.02, 'LTR'),
@@ -3559,7 +3562,8 @@ INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES
 (705, 127, 0.005, 'KG'),
 (705, 89, 0.02, 'LTR'),
 (706, 127, 0.005, 'KG'),
-(706, 89, 0.02, 'LTR');
+(706, 89, 0.02, 'LTR')
+ON CONFLICT DO NOTHING;
 INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES
 (707, 127, 0.005, 'KG'),
 (707, 89, 0.02, 'LTR'),
@@ -4560,7 +4564,8 @@ INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES
 (1164, 127, 0.005, 'KG'),
 (1164, 89, 0.02, 'LTR'),
 (1165, 127, 0.005, 'KG'),
-(1165, 89, 0.02, 'LTR');
+(1165, 89, 0.02, 'LTR')
+ON CONFLICT DO NOTHING;
 INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES
 (1166, 127, 0.005, 'KG'),
 (1166, 89, 0.02, 'LTR'),
@@ -5035,4 +5040,5 @@ INSERT INTO recipes (menu_item_id, ingredient_id, quantity, unit) VALUES
 (1329, 166, 0.15, 'KG'),
 (1329, 61, 0.05, 'KG'),
 (1329, 149, 0.001, 'KG'),
-(1329, 13, 0.2, 'LTR');
+(1329, 13, 0.2, 'LTR')
+ON CONFLICT DO NOTHING;

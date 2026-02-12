@@ -1,33 +1,73 @@
-import os
-import sys
-from sqlalchemy import create_engine, text
+"""Test Supabase PostgreSQL connection with verbose error output."""
+import traceback
 
-# Add project root to path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# Test 1: Raw psycopg2 connection
+print("=" * 60)
+print("TEST 1: Raw psycopg2 connection (port 5432)")
+print("=" * 60)
+try:
+    import psycopg2
+    conn = psycopg2.connect(
+        host="db.tkaajkabuelfvriggnef.supabase.co",
+        port=5432,
+        database="postgres",
+        user="postgres",
+        password="ojaswin@2004",
+        sslmode="require",
+        connect_timeout=10
+    )
+    cur = conn.cursor()
+    cur.execute("SELECT version()")
+    print(f"SUCCESS! Version: {cur.fetchone()[0]}")
+    conn.close()
+except Exception as e:
+    print(f"FAILED: {type(e).__name__}: {e}")
+    traceback.print_exc()
 
-from sqlalchemy.engine import URL
+# Test 2: Try pooler port 6543
+print()
+print("=" * 60)
+print("TEST 2: Raw psycopg2 connection (port 6543 - pooler)")
+print("=" * 60)
+try:
+    import psycopg2
+    conn = psycopg2.connect(
+        host="db.tkaajkabuelfvriggnef.supabase.co",
+        port=6543,
+        database="postgres",
+        user="postgres",
+        password="ojaswin@2004",
+        sslmode="require",
+        connect_timeout=10
+    )
+    cur = conn.cursor()
+    cur.execute("SELECT version()")
+    print(f"SUCCESS! Version: {cur.fetchone()[0]}")
+    conn.close()
+except Exception as e:
+    print(f"FAILED: {type(e).__name__}: {e}")
+    traceback.print_exc()
 
-url_object = URL.create(
-    "postgresql",
-    username="postgres",
-    password="ojaswin@2004",  # Plain password, URL.create handles encoding
-    host="db.tkaajkabuelfvriggnef.supabase.co",
-    port=5432,
-    database="postgres",
-    query={"sslmode": "require"}
-)
-DATABASE_URL = url_object
-
-def test_connection():
-    try:
-        print(f"Connecting to: {DATABASE_URL}")
-        engine = create_engine(DATABASE_URL)
-        with engine.connect() as connection:
-            result = connection.execute(text("SELECT version()"))
-            print("Connection Successful!")
-            print(f"Version: {result.fetchone()[0]}")
-    except Exception as e:
-        print(f"Connection Failed: {e}")
-
-if __name__ == "__main__":
-    test_connection()
+# Test 3: Try the transaction pooler endpoint
+print()
+print("=" * 60)
+print("TEST 3: Pooler endpoint (aws-0-ap-south-1)")
+print("=" * 60)
+try:
+    import psycopg2
+    conn = psycopg2.connect(
+        host="aws-0-ap-south-1.pooler.supabase.com",
+        port=6543,
+        database="postgres",
+        user="postgres.tkaajkabuelfvriggnef",
+        password="ojaswin@2004",
+        sslmode="require",
+        connect_timeout=10
+    )
+    cur = conn.cursor()
+    cur.execute("SELECT version()")
+    print(f"SUCCESS! Version: {cur.fetchone()[0]}")
+    conn.close()
+except Exception as e:
+    print(f"FAILED: {type(e).__name__}: {e}")
+    traceback.print_exc()

@@ -1,4 +1,7 @@
 {
+    "buildCommand": "cd intelli-cater && npm install && npm run build",
+    "outputDirectory": "intelli-cater/dist",
+    "installCommand": "pip install -r requirements.txt && cd intelli-cater && npm install",
     "rewrites": [
         {
             "source": "/api/(.*)",
