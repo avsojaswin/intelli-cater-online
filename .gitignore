@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.env
+.DS_Store
+catering.db
+*.sqlite3
+.vscode/
+.idea/
+tmp/
+.gemini/

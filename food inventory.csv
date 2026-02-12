@@ -1,0 +1,232 @@
+Category,Item ID,Item Name,Regional Name,Brand,Package Size,Unit,Stock Quantity
+Provisions,1,Turmeric Powder,Pasupu,Swasthik,1x500g,KG,29
+Provisions,2,Kumkuma,Kumkuma,,1x1kg,KG,0
+Provisions,3,Baking Soda,Tine Soda,,1x1kg,KG,1.5
+Provisions,4,Baking Powder,Baking Powder,Weikfild,1x100g,PKT,11
+Provisions,5,Beans Dry - Black Eye Peas,Lubia,,1x1kg,KG,0
+Provisions,6,Beans Dry - Cow Peas,Alasandalu,,1x1kg,KG,13
+Provisions,7,Beans Dry - Lima Beans,Double Beans,,1kg,KG,4
+Provisions,8,Beans Dry - Green Gram Whole,Pesarlu,,1x1kg,KG,3
+Provisions,9,Beans Dry - Green Peas,,,,1x1kg,KG,16
+Provisions,10,Beans Dry - Red Kidney Beans,Rajma,,1x1kg,KG,0
+Provisions,11,Beans Dry - White Peas,Batani,,1x1kg,KG,4
+Provisions,12,Bread Scrums,Ruskula Podi,Panka,1x1kg,KG,11
+Provisions,13,Badam Milk Powder,Badam Powder,MAS,1x1kg,BTL,9
+Provisions,14,Coffee Powder Instant,Kapee Powder,,1x1kg,PKT,5
+Provisions,15,Coffee Powder Filter,Kapee Powder-Filter,,1x200g,PKT,1
+Provisions,16,Condiments - Coconut Desicated,Coconut Powder,,1x1kg,KG,6
+Provisions,17,Condiments - Dry Chilly Whole,Dry Red Chillies,,1x1kg,KG,15
+Provisions,18,Condiments - LG Inguva,LG Inguva,,1x100g,TIN,40
+Provisions,19,Condiments - Seeds Mustard,Avalu,,1x1kg,KG,5
+Provisions,20,Condiments - Seeds Carway,Vamu,,1x1kg,KG,6
+Provisions,21,Condiments - Seeds Coriander,Daniyalu,,1x1kg,KG,19
+Provisions,22,Condiments - Seeds Cumin,Cumin Seeds,,1x1kg,KG,12
+Provisions,23,Condiments - Seeds Fenugreek,Mentulu,,1x1kg,KG,4
+Provisions,24,Condiments - Tamarind,Chintapandu,,1x1kg,KG,30
+Provisions,25,Corn Flakes,Corn Flakes,,1.7kg,KG,2
+Provisions,26,Crush - Lychee,Lychee Crush,Malas,1x910g,KG,16
+Provisions,27,Crush - Orange,Orange Crush,Malas,1x910g,KG,8
+Provisions,28,Crush - Pineapple,Pineapple Crush,Malas,1x910g,KG,48
+Provisions,29,Crush - Strawberry,Strawberry Crush,Malas,1x910g,KG,7
+Provisions,30,Canned Fruits - Mixed,Canned Fruits Mixed,Natrul,1x850g,KG,48
+Provisions,31,Canned Fruits - Pine Apple,Canned Fruits Pine Apple,Bekartreat,1x850g,KG,83
+Provisions,32,Canned Fruits - Lychee,Canned Fruits Lychee,Sarwar,1x850g,KG,65
+Provisions,33,Coconut Milk,Kobbari Paalu,,1x1Lt,LTR,9
+Provisions,34,Dry Fruits - Dates,Dates,,1x1kg,KG,0
+Provisions,35,Dry Fruit - Charoli,Charoli,,1x1kg,KG,0
+Provisions,36,Dry Fruit - Pista,Pista,,1x1kg,KG,0.8
+Provisions,37,Dry Fruits - Kiss Miss,Raisins,,1x1kg,KG,27
+Provisions,38,Dry Fruits - Apricots,Khubani Ka Meeta,,1x1kg,KG,7.5
+Provisions,39,Dry Fruits - Almonds,Almonds,,1x1kg,KG,8
+Provisions,40,Dry Fruits - Walnuts,Walnuts,,1x1kg,KG,0
+Provisions,41,Dry Fruits - Water Melon Seeds,Water Melon Seeds,,1x1kg,KG,0
+Provisions,42,Essence - Almond,Badam Essence,,,,,
+Provisions,43,Essence - Vanila,Venila Essence,,,,,
+Provisions,44,Flour - Corn,Corn Flour,,1x1kg,KG,33
+Provisions,45,Flour - Rice,Rice Flour,,1x1kg,KG,0
+Provisions,46,Flour - White,Maida,,1x1kg,KG,88
+Provisions,47,Flour - Finger Millet,Ragi Flour,,1x1kg,KG,8
+Provisions,48,Flour - Bengal Gram,Basin,,1x1kg,KG,12.5
+Provisions,49,Flour - Wheat,Aata,Asirwad,1x1kg,KG,104
+Provisions,50,Food Colour - Apple Green,Green Colour,,1x100g,KG,7
+Provisions,51,Lemon Yellow Colour,Food Colour-Lemon Yellow,,1x100g,KG,6
+Provisions,52,Food Colour - Orange Red,Orange Red,,1x100g,KG,1
+Provisions,53,Rasberry Red Colour,Food Colour-Rasberry Red,,1x100g,KG,8
+Provisions,54,Oora Mirchi,Fryums-Curd Chilli Dry,,1x1kg,KG,12
+Provisions,55,Fryums Appadam Poolu,Appadam Poolu,,1x1kg,KG,8
+Provisions,56,Appadalu,Fryums-Appadalu,,1x1kg,KG,6
+Provisions,57,Fryums - Minapa Vadiyalu,Minapavadiyalu,,1x1kg,KG,9
+Provisions,58,Fryums - Biyam Pindi Vadiyalu,Biyyam Vadiyalu,,1x1kg,KG,0
+Provisions,59,Fryums - Gummadi Vadiyalu,Gummadi Vadiyalu,,1x1kg,KG,0
+Provisions,60,Saggu Biyam Vadiyalu,Fryums-Saggubiyam Vadiyalu,,1x1kg,KG,0
+Provisions,61,Ghee Desi,Naiee,,1x1kg,KG,155
+Provisions,62,Herbs Dry - Kasoori Methi,Kasoori Methi,,1x1kg,KG,4
+Provisions,63,Herbs Dry - Oregano,Oregano,,1x1kg,KG,1.5
+Provisions,64,Herbs Dry - Thyme,Thyme,,1x1kg,KG,4
+Provisions,65,Rose Marry,Herb Dry Rosemarry,,1x1kg,KG,0
+Provisions,66,Herb - Bay Leaves,Biryani Aku,,1x1kg,KG,6.4
+Provisions,67,Mixed Fruit Jam,Jam-Mix Fruit,,1x1kg,KG,10
+Provisions,68,Lentils - Bengal Gram,Chana Dal,,1x1kg,KG,131
+Provisions,69,Lentils - Black Gram Whole Dehusked,Minapappu Gundu,,1x1kg,KG,27
+Provisions,70,Lentils - Fried Bengal Gram,Putanalu,,1x1kg,KG,27
+Provisions,71,Lentils - Green Gram Split Cleaned,Sai Pesara Pappu,,1x1kg,KG,17
+Provisions,72,Lentil - Black Gram Split Dehusked,Sai Minapappu,,1x1kg,KG,3.1
+Provisions,73,Lentil - Yellow Lentil,Kandi Pappu,,1x1kg,KG,87
+Provisions,74,Masala - Chat,Chat Masala,Badhsha,1x100g,KG,25
+Provisions,75,Masala - Chicken,Chicken Masala,Badhsha,1x100g,KG,25
+Provisions,76,Garam Masala,Garam Masala,MDH,1x100g,KG,3
+Provisions,77,Masala - Kitchen King,Kitchen King,MDH,1x100g,KG,6
+Provisions,78,Masala - Meat,Meat Masala,Badsha,1x100g,KG,1
+Provisions,79,Masala - Chole,Chole Masala,Evarest,1x100g,KG,10
+Provisions,80,Mayonaise,Mayonnaise,Dalmont,,KG,27
+Provisions,81,Meal Maker - Soy Balls,Soy Meal Maker,,1x1kg,KG,8
+Provisions,82,Meal Maker Mince - Soy,Soy Meal Maker Kheema,MK,1x1kg,KG,19
+Provisions,83,Milk Made,Condensed Milk,Nestle,1x400g,KG,20
+Provisions,84,Nuts - Cashew Whole,Cahew Nut Whole,,1x1kg,KG,12.7
+Provisions,85,Nuts - Cashew Split,Cashew Nut Split,,1x1kg,KG,35
+Provisions,86,Nuts - Groundnuts,Palli,,1x1kg,KG,55
+Provisions,87,Nuts - Coconut Dry,Coconut Desicated,,1x1kg,KG,10.3
+Provisions,88,Noodles Chinese,Chinese Noodles,,1x500g,KG,2.5
+Provisions,89,Oil Refined Sunflower,Sunflower Oil,Freedom,1x15Lt,LTR,55
+Provisions,90,Oil Mustard,Mustard Oil,,1x1Lt,LTR,14
+Provisions,91,Oil Olive,Olive Oil,,1x1Lt,LTR,9
+Provisions,92,Oil Salad,Salad Oil,,1x200ml,KG,14
+Provisions,93,Oil Sesame,Sesame Oil,,1x200ml,KG,0
+Provisions,94,Olives Pitted,Olives Seedless,,,BOT,9
+Provisions,95,Panko Flakes,Panko Flakes,,1x500g,KG,0
+Provisions,96,Pasta - Fetucine,Pasta,,1x1kg,KG,35
+Provisions,97,Pasta - Penne,Pasta,,1x1kg,KG,3.5
+Provisions,98,Peanut Butter,Peanut Butter,,1x500g,KG,0
+Provisions,99,Phool Makhani,Phool Makahani,,1x500g,KG,0
+Provisions,100,Powder - Black Pepper,Black Pepper Pdr,,1x500g,KG,0
+Provisions,101,Powder - White Pepper,Tella Pepper Powder,Sarzing,1x500g,KG,1
+Provisions,102,Powder - Kashimiri Chilly,Degi Mirchi Pdr,MDH,1x500g,KG,5
+Provisions,103,Powder Jeera Powder,Jeera Pdr,Starzing,1x500g,KG,13
+Provisions,104,Powder - Masala Chiily,Masala Karam,Akira,1x1kg,KG,1
+Provisions,105,Powder Coriander,Daniyala Podi,Swasthik,1x500g,KG,2
+Provisions,106,Powder - Paprika Chilli,Paprika Chilli Pdr,,,KG,0
+Provisions,107,Powder - Amchur,Amchur,,,KG,0
+Provisions,108,Powders - Mustard,Ava Pindi,,,KG,0
+Provisions,109,Powder - Chilly,Pachi Karam,,1x500g,KG,48
+Provisions,110,Powder - Chilly Flakes,Iguru Karam,,,KG,0
+Provisions,111,Powder - Peri Peri,Peri Peri Powder,,,KG,0
+Provisions,113,Powder - Sambar,Sambar Podi,,1x500g,KG,10
+Provisions,114,Powder - Sandal,Gandaham Podi,,,KG,0
+Provisions,115,Powder - Sonti,Sontipodi,Sarzing,1x100g,KG,3.3
+Provisions,116,Rice - Pressed Rice,Atukulu,,1x1kg,KG,7.3
+Provisions,117,Rice - Basmati G 1,Basmathi Rice,Dawath,1x10kg,KG,634
+Provisions,118,Rice - Basmati G 2,Basmati Rice,,1x1kg,KG,19
+Provisions,119,Rice - Boiled Rice,Boiled Rice,,1x1kg,KG,5
+Provisions,120,Rice - Puffed,Borugulu,,1x250g,KG,0
+Provisions,121,Rice - Broken Rice,Rice Nuka,,1x1kg,KG,25
+Provisions,122,Rice - Masoori Event,Event Rice,Gajaraj,1x1kg,KG,282
+Provisions,123,Rice - Dosa Rice,Mota Rice,,,KG,0
+Provisions,124,Rice - Saggubiyam,Saggu Biyam,,1x500g,KG,8
+Provisions,125,Salt - Rock,Kallu Uppu,,1x1kg,KG,78
+Provisions,126,Salt - Lemon,Nimma Uppu,,1x1kg,KG,6.7
+Provisions,127,Salt - Table Salt,Table Salt,Tata,1x1kg,KG,62
+Provisions,128,Salt - Tasting Salt,Tasting Salt,,1x1kg,KG,4.8
+Provisions,129,Sanuf,Sompu,,1x1kg,KG,3
+Provisions,130,Sauce Green Chilli,Green Chilli Sauce,,1x650g,BOT,16
+Provisions,131,Sauce Hot Garlic,Hot Garlic Sauce,,1x650g,BOT,19
+Provisions,132,Sauce Mustrd,Mustard Sauce,,1x200g,BOT,3
+Provisions,133,Sauce Tomato,Tomato Sauce,,1x1kg,BOT,0
+Provisions,134,Sauce Soya,Soya Sauce,,1x650g,BOT,46
+Provisions,135,Sauce Ulavacaru,Ulava Charu,,1x1kg,PAK,0
+Provisions,136,Sauce Sezwan,Sezwan Sauce,,1x250g,BOT,12
+Provisions,137,Sauce Tabasco,Tabasco Sauce,,,KG,0
+Provisions,138,Sauce Worcestershire,Worcestershire Sauce,,1x450g,BOT,10
+Provisions,139,Sauces 8 To 8,Sauce 8 To 8,,1x250g,BOT,10
+Provisions,140,Sauce - Tomato Ketchup,Tomato Ketchup,,1x950g,PAK,19
+Provisions,141,Seeds - Poppy,Gasalu,,1x1kg,KG,15.9
+Provisions,142,Seeds - Mahamae,Nuvvulu,,1x1kg,KG,10.5
+Provisions,143,Seeds - Watermelon,Pucha Pappu,,1x1kg,KG,8.8
+Provisions,144,Semolina Idli,Idli Ravva,,1x1kg,KG,40
+Provisions,145,Semolina Bombay,Bombay Ravva,,1x1kg,KG,77
+Provisions,146,Semolina Whole Wheat,Godhuma Ravva,,1x1kg,KG,22
+Provisions,147,Semolina Haleem,Haleem Ravva,,1x1kg,KG,0
+Provisions,148,Spices - Bay Leaf,Tej Patta,,,KG,0
+Provisions,149,Spices Black Cardamom,Black Elaichi,,1x1kg,KG,1.6
+Provisions,150,Spices Allspice,Kabab Chini,,1x1kg,KG,1.9
+Provisions,151,Spices Black Pepper Whole,Miriyalu,,1x1kg,KG,9.8
+Provisions,152,Spices Black Seeds,Kalonji,,,KG,0
+Provisions,153,Spices Kastoori Methi,Kastoori Methi,,1x1kg,KG,4
+Provisions,154,Spices Mace,Japatri,,1x1kg,KG,1.1
+Provisions,155,Spices Kapok Buds,Marati Mogga,,1x1kg,KG,2.8
+Provisions,156,Spices Nut Meg,Jaji Kai,,1x1kg,KG,3.3
+Provisions,157,Spices Potli Masala,Potli Masala,Sirvar,1x50g,PAK,64
+Provisions,158,Spices Rose Petals,Rose Patta,,1x1kg,KG,2.2
+Provisions,159,Spices Safron,Kukuma Puvvu,,,KG,0
+Provisions,160,Spices Shahijeera,Sajira,,1x1kg,KG,4.7
+Provisions,161,Spices Star Anees,Anasa Puvvu,,1x1kg,KG,3
+Provisions,162,Spices Stone Flower,Pathar Ka Phool,,,KG,0
+Provisions,163,Spices - Cardamom,Green Elaichi,,1x1kg,KG,11.6
+Provisions,164,Spices - Cinnamon,Dalchini,,1x1kg,KG,17
+Provisions,165,Spices - Cloves,Lanvag,,1x1kg,KG,10.2
+Provisions,166,Sugar - Acasia,Patiki Bellam,,1x1kg,KG,4.9
+Provisions,167,Sugar - Crystal,Sugar,,1x1kg,KG,8.5
+Provisions,168,Sugars - Honey,Honey,Apis,1x1kg,BOT,15
+Provisions,169,Sugars - Jaggery,Bellam,,1x900g,KG,38
+Provisions,170,Surf Powder,Surf,,,KG,0
+Provisions,171,Syrup - Granadine,Syrup-Granadine,Zone,1x1Lt,LET,8
+Provisions,172,Syrup - Granadine,Syrup-Granadine,Manama,1x1Lt,LET,2
+Provisions,173,Tea Powder,Tea Powder,,,KG,0
+Provisions,174,Tea Bags,Tea Bags,,,,,
+Provisions,175,Tineed Foods - Sweet Corn,Sweet Corn Tin,,1x850g,KG,18
+Provisions,176,Vinegar Plain,Vinegar,,,KG,5
+Provisions,177,Vinegar Apple Cider,Apple Vinegar,,1x1kg,KG,0
+Provisions,178,Vermicili,Vermicilli,,,KG,0
+Mocktail Products,179,Blue Curaco,Blue Curaco,,1x1Lt,BTL,19
+Mocktail Products,180,Crush Green Apple,Crush Green Apple,,1x1Lt,BTL,16
+Mocktail Products,181,Crush Lychee,Crush Lychee,,1x1Lt,BTL,21
+Mocktail Products,182,Crush Mango,Crush Mango,,1x1Lt,BTL,0
+Mocktail Products,183,Cruah Ornage,Cruah Ornage,,1x1Lt,BTL,8
+Mocktail Products,184,Crush - Peach,Crush-Peach,,1x1Lt,BTL,13
+Mocktail Products,185,Crush - Pineapple,Crush-Pineapple,,1x1Lt,BTL,48
+Mocktail Products,186,Crush - Strawberry,Crush-Strawberry,,1x1Lt,BTL,7
+Mocktail Products,187,Syrup Monin,Syrup Monin,,,BTL,0
+Mocktail Products,188,Triple Shot,Triple Shot,,1x1Lt,BTL,2
+Mocktail Products,189,Juice - Apple,Juice-Apple,,,PK,0
+Mocktail Products,190,Juice - Canberyy,Juice-Canberyy,,,PK,0
+Mocktail Products,191,Juice - Guava,Juice-Guava,,,PK,0
+Mocktail Products,192,Juice - Lemon,Juice-Lemon,,,PK,0
+Mocktail Products,193,Juice - Lychee,Juice-Lychee,,,PK,0
+Mocktail Products,194,Juice - Mango,Juice-Mango,,,PK,0
+Mocktail Products,195,Juice - Orange,Juice-Orange,,,PK,0
+Mocktail Products,196,Juice - Pineapple,Juice-Pineapple,,,PK,0
+Mocktail Products,197,Mineral Water Btl 200 Ml,Mineral Water,Bisleri,,BTL,0
+Mocktail Products,198,Mineral Water Btl 500 Ml,Mineral Water,Bisleri,,BTL,0
+Mocktail Products,199,Mineral Water Btl 1 Ltr,Mineral Water,Kinley,,BTL,0
+Mocktail Products,200,Club Soda,Club Soda,Kinley,,BTL,0
+Mocktail Products,201,Coke,Coke,Coca Cola,,BTL,0
+Mocktail Products,202,Fanta,Fanta,Coca Cola,,BTL,0
+Mocktail Products,203,Sprite,Sprite,Coca Cola,,BTL,0
+Mocktail Products,204,Thums Up,Thums Up,Thumsup,,BTL,0
+Pickles,205,Mango Pickle,Mango Avakai,Home Made,,KG,0
+Pickles,206,Chow Choe Pickle,Bangalore Vankai,Home Made,,KG,0
+Pickles,207,Garlic Cashew Pickle,Velluli Jeedi Gundla,Home Made,,KG,0
+Pickles,208,Gongura Pandumirchi,,Home Made,,KG,0
+Powders,209,Coconut Sanagakaram,,Home Made,,KG,0
+Powders,210,Pudina Karam,,Home Made,,KG,0
+Powders,211,Kandi Karam,,Home Made,,KG,0
+Powders,212,Nalla Karam,,Home Made,,KG,0
+Kitchen Disposables,213,Bamboo Basket,Veduru Gampalu,Veduru,,NO,0
+Kitchen Disposables,214,Curd Pot 5 Ltr,Perugu Kundalu,Claypot,,NO,0
+Kitchen Disposables,215,Curd Pot 150 G,Perugu Muntalu,Clay Pot,,NO,0
+Kitchen Disposables,216,Cine Cloth,Cine Gudda,Cotton Kora,,NO,0
+Kitchen Disposables,217,Bamboo Skewers,Veduru Chuvvalu,Bamboo,,NO,0
+Kitchen Disposables,218,Lolipop Sticks,Lolipop Stikklu,Bamboo,,NO,0
+Dairy Products,219,Butter,Butter,Amul,,KG,0
+Dairy Products,220,Cheese Chedder,Cheese Chedder,Amul,,KG,0
+Dairy Products,221,Cheese Paramesan,Cheese Paramesan,Amul,,KG,0
+Dairy Products,222,Cheese Pizza,Cheese Pizza,Amul,,KG,0
+Dairy Products,223,Cheese Slices,Cheese Slices,Amul,,NO,0
+Dairy Products,224,Curd,Curd,,,KG,0
+Dairy Products,225,Cream Dairy,Cream Dairy,Amul,,KG,0
+Dairy Products,226,Cream Veg,Cream Veg,,,KG,0
+Dairy Products,227,Khova,Khova,,,KG,0
+Dairy Products,228,Malai,Malai,,,KG,0
+Dairy Products,229,Milk Cow,Milk Cow,,,LTR,0
+Dairy Products,230,Milk Toned,Milk Toned,,,LTR,0
+Dairy Products,231,Milk Whole,Milk Whole,,,LTR,0
+Dairy Products,232,Paneer,Paneer,Milk Mist,,KG,0
