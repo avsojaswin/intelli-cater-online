@@ -38,9 +38,19 @@ else:
     ssl_ctx = ssl.create_default_context()
     ssl_ctx.check_hostname = False
     ssl_ctx.verify_mode = ssl.CERT_NONE
-    engine_kwargs["connect_args"] = {"ssl_context": ssl_ctx}
+    engine_kwargs["connect_args"] = {
+        "ssl_context": ssl_ctx,
+        "timeout": 10  # 10 second timeout for pg8000
+    }
 
-engine = create_engine(DATABASE_URL, **engine_kwargs)
+# Debugging info (visible in Vercel logs)
+print(f"DEBUG: Connecting to DB... URL starts with: {DATABASE_URL[:30]}...")
+
+engine = create_engine(
+    DATABASE_URL, 
+    pool_pre_ping=True,  # Check connection health before using
+    **engine_kwargs
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
