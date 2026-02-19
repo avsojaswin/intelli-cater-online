@@ -29,6 +29,11 @@ if DATABASE_URL:
         DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+pg8000://", 1)
     elif DATABASE_URL.startswith("postgresql+psycopg2://"):
         DATABASE_URL = DATABASE_URL.replace("postgresql+psycopg2://", "postgresql+pg8000://", 1)
+    
+    # Auto-switch to Supavisor Pooler (Port 6543) for Supabase hosts 
+    # to fix IPv4/IPv6 timeout issues in Vercel.
+    if "supabase.co" in DATABASE_URL and ":5432" in DATABASE_URL:
+        DATABASE_URL = DATABASE_URL.replace(":5432", ":6543", 1)
 
 engine_kwargs = {}
 if "sqlite" in DATABASE_URL:
