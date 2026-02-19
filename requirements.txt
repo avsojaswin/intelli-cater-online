@@ -6,3 +6,5 @@ pydantic
 pg8000
 python-multipart
 requests
+mangum
+python-dotenv
